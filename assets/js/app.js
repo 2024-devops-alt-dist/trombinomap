@@ -39,22 +39,25 @@ const initMap = async () => {
 
       // Créer le marqueur et le popup
       const marker = L.marker([latitude, longitude], {
-        /*icon: customIcon*/
+        // icon: customIcon,
       });
       const popupContent = `
-                <div class="text-center">
-                    <b>${apprenant.prenom} ${apprenant.nom}</b><br>
-                    <img class="avatar" src="${apprenant.photo}" alt="${apprenant.prenom} ${apprenant.nom}" style="width:100px;"/>
-                </div>
-            `;
+        <div class="text-center">
+            <b>${apprenant.prenom} ${apprenant.nom}</b><br>
+            <img class="avatar" src="${apprenant.photo}" alt="${apprenant.prenom} ${apprenant.nom}" style="width:100px;"/>
+        </div>
+      `;
       marker.bindPopup(popupContent);
       markers.addLayer(marker);
 
       // Stocker le marqueur avec l'ID de l'apprenant
       apprenantMarkers[apprenant.id] = marker;
 
-      // Ajouter la photo de l'apprenant au-dessus de la carte
-      const photoContainer = document.getElementById("apprenant-photos");
+      // Ajouter la photo de l'apprenant dans la zone appropriée (équipe ou apprenant normal)
+      const photoContainer = isTeam
+        ? document.getElementById("team-photos") // Photos de l'équipe
+        : document.getElementById("apprenant-photos"); // Autres apprenants
+
       const photoElement = document.createElement("img");
       photoElement.src = apprenant.photo;
       photoElement.alt = `${apprenant.prenom} ${apprenant.nom}`;
@@ -62,12 +65,13 @@ const initMap = async () => {
 
       // Ajouter un événement de clic sur la photo pour centrer et ouvrir le popup
       photoElement.addEventListener("click", () => {
-        // Utiliser zoomToShowLayer pour déplier le groupe si nécessaire
         markers.zoomToShowLayer(marker, () => {
+          map.setView([latitude, longitude], 10); // Ajuster le zoom
           marker.openPopup(); // Ouvrir le popup associé
         });
       });
 
+      // Ajouter la photo au bon conteneur (soit team-photos, soit apprenant-photos)
       photoContainer.appendChild(photoElement);
     });
 

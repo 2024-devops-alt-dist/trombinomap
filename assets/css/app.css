@@ -9,10 +9,14 @@
   margin: 2rem 0;
 }
 
+.box.team img {
+  border: 2px solid gold;
+}
+
 .photos-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  /* justify-content: center; */
   margin-bottom: 20px;
 }
 
@@ -21,15 +25,16 @@
   max-width: 50px;
   height: 50px;
   object-fit: cover;
-  margin: 10px;
+  margin: 10px 0;
   cursor: pointer;
   border-radius: 50%;
   transition: transform 0.3s;
   border: 2px solid red;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
 }
-.photos-container img {
-  margin-right: -30px;
+.photos-container img:not(:first-child) {
+  /* margin-right: -30px; */
+  margin-left: -20px;
 }
 .photos-container img:hover {
   transform: scale(1.2);
