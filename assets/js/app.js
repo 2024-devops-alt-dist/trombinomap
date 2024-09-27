@@ -12,6 +12,9 @@ const initMap = async () => {
   // Créer un groupe de marqueurs pour le regroupement
   const markers = L.markerClusterGroup();
 
+  // Créer un objet pour stocker les marqueurs associés aux apprenants
+  const apprenantMarkers = {};
+
   try {
     // Charger les données JSON
     const response = await fetch("data/apprenants.json");
@@ -19,45 +22,57 @@ const initMap = async () => {
 
     // Pour chaque apprenant, créer un marqueur
     data.forEach((apprenant) => {
-      // Extraire latitude, longitude et isTeam
-      const [latitude, longitude] = apprenant.coordonnees; // Décomposer les coordonnées
-      const isTeam = apprenant.isTeam; // Vérifier si l'apprenant est dans l'équipe
+      const [latitude, longitude] = apprenant.coordonnees;
+      const isTeam = apprenant.isTeam;
 
       // Choisir l'icône en fonction de isTeam
       const iconUrl = isTeam
-        ? "uploads/icons/marker-gold.png" // Marqueur doré
-        : "uploads/icons/marker-default.png"; // Marqueur par défaut
+        ? "uploads/icons/marker-gold.png"
+        : "uploads/icons/marker-default.png";
 
-      // Créer une icône personnalisée
       const customIcon = L.icon({
         iconUrl: iconUrl,
-        iconSize: [25, 41], // Taille de l'icône
-        iconAnchor: [12, 41], // Point d'ancrage
-        popupAnchor: [1, -34], // Point d'ancrage pour le popup
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
       });
 
-      // Créer le marqueur
+      // Créer le marqueur et le popup
       const marker = L.marker([latitude, longitude], {
-        // icon: customIcon,
+        /*icon: customIcon*/
+      });
+      const popupContent = `
+                <div class="text-center">
+                    <b>${apprenant.prenom} ${apprenant.nom}</b><br>
+                    <img class="avatar" src="${apprenant.photo}" alt="${apprenant.prenom} ${apprenant.nom}" style="width:100px;"/>
+                </div>
+            `;
+      marker.bindPopup(popupContent);
+      markers.addLayer(marker);
+
+      // Stocker le marqueur avec l'ID de l'apprenant
+      apprenantMarkers[apprenant.id] = marker;
+
+      // Ajouter la photo de l'apprenant au-dessus de la carte
+      const photoContainer = document.getElementById("apprenant-photos");
+      const photoElement = document.createElement("img");
+      photoElement.src = apprenant.photo;
+      photoElement.alt = `${apprenant.prenom} ${apprenant.nom}`;
+      photoElement.title = `${apprenant.prenom} ${apprenant.nom}`;
+
+      // Ajouter un événement de clic sur la photo pour centrer et ouvrir le popup
+      photoElement.addEventListener("click", () => {
+        // Utiliser zoomToShowLayer pour déplier le groupe si nécessaire
+        markers.zoomToShowLayer(marker, () => {
+          marker.openPopup(); // Ouvrir le popup associé
+        });
       });
 
-      // Ajouter le popup au marqueur
-      marker.bindPopup(`
-                <div class="text-center">
-                    <b>${apprenant.prenom} ${apprenant.nom}</b>
-                    <br><img class="avatar" src="${apprenant.photo}" alt="${apprenant.prenom} ${apprenant.nom}" style="width:100px;"/>
-                </div>
-            `);
-
-      // Ajouter le marqueur au groupe de marqueurs
-      markers.addLayer(marker);
+      photoContainer.appendChild(photoElement);
     });
 
     // Ajouter le groupe de marqueurs à la carte
     map.addLayer(markers);
-
-    // Ajuster la vue de la carte pour inclure tous les marqueurs
-    // map.fitBounds(bounds); // Si vous souhaitez centrer la carte après avoir ajouté les marqueurs
   } catch (error) {
     console.error("Erreur lors du chargement du fichier JSON:", error);
   }
