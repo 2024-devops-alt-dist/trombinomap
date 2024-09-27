@@ -1,5 +1,14 @@
 @import url("https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/css/foundation.min.css");
 
+.bulle h1 {
+  display: inline-block;
+  background-color: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  padding: 1rem 0.5rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+
 .photos-container {
   display: flex;
   flex-wrap: wrap;
