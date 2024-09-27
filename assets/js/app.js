@@ -66,7 +66,7 @@ const initMap = async () => {
       // Ajouter un événement de clic sur la photo pour centrer et ouvrir le popup
       photoElement.addEventListener("click", () => {
         markers.zoomToShowLayer(marker, () => {
-          map.setView([latitude, longitude], 10); // Ajuster le zoom
+          // map.setView([latitude, longitude], 10); // Ajuster le zoom
           marker.openPopup(); // Ouvrir le popup associé
         });
       });
