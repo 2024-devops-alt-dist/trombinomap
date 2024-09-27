@@ -1,0 +1,12 @@
+@import url("https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/css/foundation.min.css");
+
+.map {
+  height: 60vh;
+}
+img.avatar {
+  border-radius: 50%;
+  width: 100%;
+  max-width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
