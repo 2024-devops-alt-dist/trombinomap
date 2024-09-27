@@ -108,7 +108,7 @@
     "nom": "Didilon",
     "prenom": "Erwan",
     "isTeam": false,
-    "coordonnees": [45.18882337359222, 5.722920817195661],
+    "coordonnees": [45.76462749134894, 4.838217549869644],
     "photo": "uploads/photo/apprenant/erwan.jpg"
   },
   {
@@ -188,7 +188,7 @@
     "nom": "Maindre",
     "prenom": "Arnaud",
     "isTeam": false,
-    "coordonnees": [45.18882337359222, 5.722920817195661],
+    "coordonnees": [50.687559765471576, 3.0521293317469786],
     "photo": "uploads/photo/apprenant/photo_arnaud.jpg"
   }
 ]
