@@ -28,7 +28,7 @@
     "nom": "Ni",
     "prenom": "Jimmy",
     "isTeam": false,
-    "coordonnees": [44.84119676981754, -0.5815494797811493],
+    "coordonnees": [44.84095333153449, -0.5830944321766593],
     "photo": "uploads/photo/apprenant/jimmy_ni.jpeg"
   },
   {
@@ -60,7 +60,135 @@
     "nom": "Pousson",
     "prenom": "Morgan",
     "isTeam": false,
-    "coordonnees": [43.49283774708267, -1.475165673635448],
+    "coordonnees": [43.49358494364635, -1.4770539487855154],
     "photo": "uploads/photo/apprenant/morgan.png"
+  },
+  {
+    "id": 9,
+    "nom": "Vianey",
+    "prenom": "Nathan",
+    "isTeam": false,
+    "coordonnees": [45.18882337359222, 5.722920817195661],
+    "photo": "uploads/photo/apprenant/nathan.jpg"
+  },
+  {
+    "id": 10,
+    "nom": "Milyukov",
+    "prenom": "Sergeï",
+    "isTeam": false,
+    "coordonnees": [43.49358494364635, -1.4770539487855154],
+    "photo": "uploads/photo/apprenant/sergei.png"
+  },
+  {
+    "id": 11,
+    "nom": "Ziani",
+    "prenom": "Elena",
+    "isTeam": false,
+    "coordonnees": [45.76462749134894, 4.838217549869644],
+    "photo": "uploads/photo/apprenant/Elena_Ziani_photo_identite.jpg"
+  },
+  {
+    "id": 12,
+    "nom": "Suc",
+    "prenom": "Juliette",
+    "isTeam": false,
+    "coordonnees": [45.76462749134894, 4.838217549869644],
+    "photo": "uploads/photo/apprenant/juliette.JPG"
+  },
+  {
+    "id": 13,
+    "nom": "Garlet",
+    "prenom": "Gwendoline",
+    "isTeam": false,
+    "coordonnees": [45.76462749134894, 4.838217549869644],
+    "photo": "uploads/photo/apprenant/gwen.jpeg"
+  },
+  {
+    "id": 14,
+    "nom": "Didilon",
+    "prenom": "Erwan",
+    "isTeam": false,
+    "coordonnees": [45.18882337359222, 5.722920817195661],
+    "photo": "uploads/photo/apprenant/erwan.jpg"
+  },
+  {
+    "id": 15,
+    "nom": "Duko",
+    "prenom": "Boris",
+    "isTeam": false,
+    "coordonnees": [42.69710298027984, 9.450965886960644],
+    "photo": "uploads/photo/apprenant/profile_photo_Boris_DUKO.jpg"
+  },
+  {
+    "id": 16,
+    "nom": "Degli Esposti",
+    "prenom": "Quentin",
+    "isTeam": false,
+    "coordonnees": [45.76462749134894, 4.838217549869644],
+    "photo": "uploads/photo/apprenant/quentin.png"
+  },
+  {
+    "id": 17,
+    "nom": "Leyval",
+    "prenom": "Adrien",
+    "isTeam": false,
+    "coordonnees": [45.76462749134894, 4.838217549869644],
+    "photo": "uploads/photo/apprenant/adrien.jpg"
+  },
+  {
+    "id": 18,
+    "nom": "Cornic",
+    "prenom": "Maëva",
+    "isTeam": false,
+    "coordonnees": [43.35936678690728, -1.7652383626641914],
+    "photo": "uploads/photo/apprenant/maëva.jpg"
+  },
+  {
+    "id": 19,
+    "nom": "Della Felice",
+    "prenom": "Lucio",
+    "isTeam": false,
+    "coordonnees": [43.49358494364635, -1.4770539487855154],
+    "photo": "uploads/photo/apprenant/lucio.jpg"
+  },
+  {
+    "id": 20,
+    "nom": "Janin",
+    "prenom": "Camille",
+    "isTeam": false,
+    "coordonnees": [45.76462749134894, 4.838217549869644],
+    "photo": "uploads/photo/apprenant/camille.jpg"
+  },
+  {
+    "id": 21,
+    "nom": "Lecanu",
+    "prenom": "Mathieu",
+    "isTeam": false,
+    "coordonnees": [46.111858610188456, 4.6726929161855555],
+    "photo": "uploads/photo/apprenant/mathieu.jpg"
+  },
+  {
+    "id": 22,
+    "nom": "Lino Kubemba",
+    "prenom": "Emmanuel",
+    "isTeam": false,
+    "coordonnees": [43.49358494364635, -1.4770539487855154],
+    "photo": "uploads/photo/apprenant/emmanuel.png"
+  },
+  {
+    "id": 23,
+    "nom": "Agaoui",
+    "prenom": "Mounir",
+    "isTeam": false,
+    "coordonnees": [45.18882337359222, 5.722920817195661],
+    "photo": "uploads/photo/apprenant/mounir.jpg"
+  },
+  {
+    "id": 24,
+    "nom": "Maindre",
+    "prenom": "Arnaud",
+    "isTeam": false,
+    "coordonnees": [45.18882337359222, 5.722920817195661],
+    "photo": "uploads/photo/apprenant/photo_arnaud.jpg"
   }
 ]
