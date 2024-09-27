@@ -9,8 +9,8 @@ const initMap = async () => {
     attribution: "© OpenStreetMap",
   }).addTo(map);
 
-  // Créer un objet LatLngBounds pour ajuster la vue de la carte
-  const bounds = L.latLngBounds();
+  // Créer un groupe de marqueurs pour le regroupement
+  const markers = L.markerClusterGroup();
 
   try {
     // Charger les données JSON
@@ -36,25 +36,28 @@ const initMap = async () => {
         popupAnchor: [1, -34], // Point d'ancrage pour le popup
       });
 
-      // Créer le marqueur et l'ajouter à la carte
+      // Créer le marqueur
       const marker = L.marker([latitude, longitude], {
         // icon: customIcon,
-      }).addTo(map);
+      });
 
-      // Ajouter les coordonnées du marqueur aux limites
-      bounds.extend([latitude, longitude]);
-
-      // Ajouter un popup au marqueur
+      // Ajouter le popup au marqueur
       marker.bindPopup(`
-          <div class="text-center">
-            <b>${apprenant.prenom} ${apprenant.nom}</b>
-            <div><img class="avatar" src="${apprenant.photo}" alt="${apprenant.prenom} ${apprenant.nom}" style="width:100px;"/>
-          </div>
-        `);
+                <div class="text-center">
+                    <b>${apprenant.prenom} ${apprenant.nom}</b>
+                    <br><img class="avatar" src="${apprenant.photo}" alt="${apprenant.prenom} ${apprenant.nom}" style="width:100px;"/>
+                </div>
+            `);
+
+      // Ajouter le marqueur au groupe de marqueurs
+      markers.addLayer(marker);
     });
 
+    // Ajouter le groupe de marqueurs à la carte
+    map.addLayer(markers);
+
     // Ajuster la vue de la carte pour inclure tous les marqueurs
-    map.fitBounds(bounds);
+    // map.fitBounds(bounds); // Si vous souhaitez centrer la carte après avoir ajouté les marqueurs
   } catch (error) {
     console.error("Erreur lors du chargement du fichier JSON:", error);
   }

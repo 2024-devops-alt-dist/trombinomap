@@ -30,5 +30,37 @@
     "isTeam": false,
     "coordonnees": [44.84119676981754, -0.5815494797811493],
     "photo": "uploads/photo/apprenant/jimmy_ni.jpeg"
+  },
+  {
+    "id": 5,
+    "nom": "Clavequin",
+    "prenom": "Yaël",
+    "isTeam": false,
+    "coordonnees": [43.60241386403606, 1.4383330621804575],
+    "photo": "uploads/photo/apprenant/yael_clavequin.jpeg"
+  },
+  {
+    "id": 6,
+    "nom": "Bertaud",
+    "prenom": "Ariane",
+    "isTeam": false,
+    "coordonnees": [43.60241386403606, 1.4383330621804575],
+    "photo": "uploads/photo/apprenant/ariane.jpg"
+  },
+  {
+    "id": 7,
+    "nom": "Capello",
+    "prenom": "Agnès",
+    "isTeam": false,
+    "coordonnees": [43.20792043440971, 2.5407081515700667],
+    "photo": "uploads/photo/apprenant/agnes.png"
+  },
+  {
+    "id": 8,
+    "nom": "Pousson",
+    "prenom": "Morgan",
+    "isTeam": false,
+    "coordonnees": [43.49283774708267, -1.475165673635448],
+    "photo": "uploads/photo/apprenant/morgan.png"
   }
 ]
